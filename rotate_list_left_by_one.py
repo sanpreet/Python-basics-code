@@ -18,8 +18,17 @@ def rotate_list_by_one_left(user_list):
 input_list = [
     4, 5, 6, 7, 3, 4, 1
     ]
+input_list_method_1  = input_list[:]    
 
 rotated_left_user_list = rotate_list_by_one_left(
     user_list=input_list
     )
-print("Rotated list by one left is: {}".format(rotated_left_user_list))     
+print("Rotated list by one left by method 1 is: {}".format(rotated_left_user_list))     
+
+# method 2
+rotate_left_list_numbers = input_list_method_1[1:] + input_list_method_1[0:1]
+print("Rotated list by one left by method 2 is: {}".format(rotate_left_list_numbers))
+# method 3
+
+input_list_method_1.append(input_list_method_1.pop(0))
+print("Rotated list by one left by method 3 is: {}".format(input_list_method_1))
