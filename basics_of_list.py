@@ -60,3 +60,33 @@ arr = [
     ]
 x = 5
 count_greater_than_x(arr=arr, x=x)
+
+
+def min_function(arr, n):
+    
+    smallest = arr[0]
+    for i in range(n):
+        if arr[i] < smallest:
+            smallest = arr[i]
+    
+    return smallest
+
+
+arr = [23, 1, 4, 0]
+n = 4
+print(min_function(arr=arr, n=n))
+
+
+def max_function(arr, n):
+    
+    largest = arr[0]
+    for i in range(n):
+        if arr[i] > largest:
+            largest = arr[i]
+    
+    return largest
+
+
+arr = [23, 1, 4, 0]
+n = 4
+print(max_function(arr=arr, n=n))
