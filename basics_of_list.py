@@ -90,3 +90,39 @@ def max_function(arr, n):
 arr = [23, 1, 4, 0]
 n = 4
 print(max_function(arr=arr, n=n))
+
+
+# Function to find median of the array
+def median(A,N):
+        
+        A.sort()
+        
+        if len(A) % 2 != 0:
+            # this says that number is odd
+            # floor operation is used
+            median = A[len(A) // 2]
+            
+        if len(A) % 2 == 0:
+            index = int(len(A) / 2)
+            number2 = A[index]
+            number1 = A[index - 1]
+            median = (number1 + number2) // 2
+        return median
+
+    
+# Function to find mean of the array elements.   
+def mean(A,N):
+    sum_ = 0
+    
+    for i in A:
+        sum_ += i
+    mean = sum_ / N
+
+    return mean 
+
+N = 4
+A = [2, 8, 3, 4]
+median = median(A=A, N=N)
+mean = mean(A=A, N=N)
+print("Median of the array {} is {}".format(A, median))
+print("Mean of the array {} is {}".format(A, mean))
