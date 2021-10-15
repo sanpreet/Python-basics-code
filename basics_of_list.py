@@ -126,3 +126,25 @@ median = median(A=A, N=N)
 mean = mean(A=A, N=N)
 print("Median of the array {} is {}".format(A, median))
 print("Mean of the array {} is {}".format(A, mean))
+
+
+# function to check whether the array is sorted in ascending or descending order
+def is_sorted(array, size):
+    # code here
+    count = 0
+    for i in range(size - 1):
+        # condition to check the array sorting
+        if array[i] <= array[i + 1]:
+            count += 1
+    # two conditions are applied one to check in ascending order and other in descending order
+    if count == size - 1 or count == 0:
+        return 1
+    else:
+        return 0
+
+
+# conditions applied
+n = 2
+arr = [4, 2]
+binary_result = is_sorted(array=arr, size=n)
+print("Result of the array is::: {}".format(binary_result))
