@@ -53,3 +53,31 @@ def validate(s):
         return 1
     else:
         return 0
+ 
+
+# code to find the index at which a substring occcures in the string
+string = "i love india and citizen of india"
+substring = "india"
+position = string.find(substring)
+
+while position > 0:
+    print(position)
+    position = string.find(substring, position + 1)
+
+   
+# code to check reverse of string and string are same
+string = "ancna"
+
+n =  len(string)
+lower = string[0]
+higher = string[n - 1]
+
+# condition which is common to both odd and even
+while lower < higher:
+    if string[lower] != string[higher]:
+        print("string is not palindrome")
+        break
+else:
+    print("string is palindrome")
+    
+    
