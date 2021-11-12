@@ -81,3 +81,22 @@ else:
     print("string is palindrome")
     
     
+# anagram or not
+string1 = "abc"
+string2 = "cka"
+
+count = [0] * 256
+
+if len(string1) != len(string2):
+    print(len(string1) == len(string2))
+
+for i in range(len(string1)):
+    count[ord(string1[i])] += 1
+    count[ord(string2[i])] -= 1
+
+for i in count:
+    if i != 0:
+        print("strings are not anagram")
+        break
+else:
+    print("strings are anagram")    
