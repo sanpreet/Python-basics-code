@@ -8,6 +8,7 @@ String must contain at least 1 lowercase character.
 String must contain at least 1 special character from @#$-*.
 """  
 import re
+from re import VERBOSE
 
 
 def validate(s):
@@ -55,6 +56,24 @@ def validate(s):
         return 0
  
 
+# option 2 for string validation using look ahead (main expression + non-consumption expression)  
+regex = re.compile("""
+        ^                   # begin word
+        (?=.*?[a-z])        # at least one lowercase letter
+        (?=.*?[A-Z])        # at least one uppercase letter
+        (?=.*?[0-9])        # at least one number
+        (?=.*?[@#$\-*\.])   # some special charactesr
+        [A-Za-z\d@#$\-*\.]  # only alphanumeric
+        {10,}                # at least 6 characters long
+        $                   # end word
+        """, VERBOSE)
+mat = re.search(regex, s) 
+if mat:
+    return 1
+else:
+    return 0
+
+    
 # code to find the index at which a substring occcures in the string
 string = "i love india and citizen of india"
 substring = "india"
