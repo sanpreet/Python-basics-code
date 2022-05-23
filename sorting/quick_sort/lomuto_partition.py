@@ -1,6 +1,3 @@
-from re import L
-
-
 def lomuto_partition(arr, low, high):
 
     i = low - 1
