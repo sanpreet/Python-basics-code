@@ -1,4 +1,4 @@
-def countNonRepeated(arr,n):
+def countNonRepeated(arr):
 
         dict_of_counts = {item:arr.count(item) for item in arr}
         count_non_repeated = 0
@@ -9,4 +9,4 @@ def countNonRepeated(arr,n):
 
 
 arr = [10, 20, 30, 40, 10]
-print(countNonRepeated(arr=arr, n=10))
+print(countNonRepeated(arr=arr))
