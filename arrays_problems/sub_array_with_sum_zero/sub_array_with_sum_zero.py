@@ -17,7 +17,7 @@ arr = [1, 2, -3]
 print(zero_sum_array(arr=arr))
 
 """
-Solution 2 with time complexity 0(1)
+Solution 2 with time complexity 0(n)
 """
 
 
