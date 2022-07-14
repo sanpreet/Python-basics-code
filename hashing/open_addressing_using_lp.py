@@ -28,6 +28,9 @@ class open_addressing_lp:
         if self.table[index] != value:
             while self.table[index] is not None and self.table[index] != value:
                 index = (index + 1) % self.table_size
+                if index == 0:
+                    break
+
         if self.table[index] == value:
             print("Key is found in the table")
         else:
@@ -39,6 +42,9 @@ class open_addressing_lp:
         if self.table[index] != value:
             while self.table[index] is not None and self.table[index] != value:
                 index = (index + 1) % self.table_size
+                if index == 0:
+                    break
+
         if self.table[index] == value:
             print("key {} is found in the table and hence deletion tag is updated at that position".format(value))
             self.table[index] = "Deletion"
@@ -46,22 +52,20 @@ class open_addressing_lp:
             print("key {} is not found in the table and hence no deletion".format(value))
 
 
-linear_probe_object = open_addressing_lp(10)
-linear_probe_object.insert_value(4)
-linear_probe_object.insert_value(44)
-linear_probe_object.insert_value(54)
-linear_probe_object.insert_value(55)
+linear_probe_object = open_addressing_lp(3)
+linear_probe_object.insert_value(10)
+linear_probe_object.insert_value(20)
+linear_probe_object.insert_value(30)
+# linear_probe_object.insert_value(55)
 print("table is created...", linear_probe_object.table)
-linear_probe_object.search(55)
-linear_probe_object.search(56)
+# linear_probe_object.search(30)
+# linear_probe_object.search(56)
 print("Going for deletion..........")
-linear_probe_object.delete(55)
-linear_probe_object.delete(56)
+linear_probe_object.delete(31)
+# linear_probe_object.delete(56)
 print("Final table after insertion, search and deletion.......")
 print(linear_probe_object.table)
 print("Going for more insertion and search......")
-linear_probe_object.insert_value(99)
-linear_probe_object.insert_value(64)
-linear_probe_object.search(64)
-
-
+# linear_probe_object.insert_value(99)
+# linear_probe_object.insert_value(64)
+# linear_probe_object.search(64)
